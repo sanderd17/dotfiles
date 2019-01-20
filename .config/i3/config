@@ -19,6 +19,14 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 10
 
+# Gaps configuration
+for_window [class="^.*"] border pixel 0
+smart gaps on
+#gaps inner all set 20
+#gaps outer current plus 5
+#gaps horizontal current plus 40
+#gaps outer current toggle 60
+
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
