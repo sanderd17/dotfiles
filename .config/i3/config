@@ -20,8 +20,8 @@ set $mod Mod4
 font pango:DejaVu Sans Mono 10
 
 # Gaps configuration
-for_window [class="^.*"] border pixel 0
-smart gaps on
+for_window [class="^.*"] border pixel 3
+#smart gaps on
 #gaps inner all set 20
 #gaps outer current plus 5
 #gaps horizontal current plus 40
@@ -189,6 +189,8 @@ bar {
 bindsym --release Print exec "scrot -s -e 'mv $f ~/Pictures && sxiv -f ~/Pictures/$f'"
 # full screen
 bindsym --release Shift+Print exec "scrot -m -e 'mv $f ~/Pictures && sxiv -f ~/Pictures/$f'"
+bindsym --release $mod+Print exec exec wallpaper-reddit wallpaper --lottery
+
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
@@ -228,6 +230,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+v exec code
 
 # Misc hacks
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/gnu-linux-os-simply-powerful_16-9_ve4_by\=madeinkobaia.png
-exec xinput set-prop 18 319 1
+exec --no-startup-id wallpaper-reddit wallpaper
+#exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/gnu-linux-os-simply-powerful_16-9_ve4_by\=madeinkobaia.png
+exec xinput set-prop 'AlpsPS/2 ALPS DualPoint TouchPad' 'libinput Tapping Enabled' 1
 exec --no-startup-id compton -b
