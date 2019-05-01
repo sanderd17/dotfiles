@@ -144,6 +144,17 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# move workspace to screen
+#bindsym $mod+Shift+j move workspace to ouput eDP-1
+#bindsym $mod+Shift+k move workspace to ouput DP-2
+#bindsym $mod+Shift+i exec "touch no-way-jose"
+
+
+bindsym Shift+$mod+bracketright move workspace to output right
+bindsym Shift+$mod+bracketleft move workspace to output left
+
+
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -191,6 +202,10 @@ bindsym --release Print exec "scrot -s -e 'mv $f ~/Pictures && sxiv -f ~/Picture
 bindsym --release Shift+Print exec "scrot -m -e 'mv $f ~/Pictures && sxiv -f ~/Pictures/$f'"
 bindsym --release $mod+Print exec exec wallpaper-reddit wallpaper --lottery
 
+# screen config
+bindsym $mod+F8 exec arandr
+for_window [class="Arandr"] floating enable
+
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
@@ -232,5 +247,6 @@ bindsym $mod+v exec code
 # Misc hacks
 exec --no-startup-id wallpaper-reddit wallpaper
 #exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/gnu-linux-os-simply-powerful_16-9_ve4_by\=madeinkobaia.png
+#output "*" background ~/Pictures/Wallpapers/gnu-linux-os-simply-powerful_16-9_ve4_by\=madeinkobaia.png fill
 exec xinput set-prop 'AlpsPS/2 ALPS DualPoint TouchPad' 'libinput Tapping Enabled' 1
 exec --no-startup-id compton -b
