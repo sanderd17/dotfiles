@@ -220,7 +220,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
 # Scratchpads
 bindsym $mod+p [instance="python"] scratchpad show; [instance="python"] move position center
-bindsym XF86Calculator [instance="python"] scratchpad show; [instance="python"] move position center
 for_window [instance="python"] floating enable
 for_window [instance="python"] resize set 800 300
 for_window [instance="python"] move scratchpad
@@ -228,6 +227,7 @@ exec --no-startup-id urxvt -name python -e python
 
 
 bindsym $mod+n [instance="javascript"] scratchpad show; [instance="javascript"] move position center
+bindsym XF86Calculator [instance="javascript"] scratchpad show; [instance="javascript"] move position center
 for_window [instance="javascript"] floating enable
 for_window [instance="javascript"] resize set 800 300
 for_window [instance="javascript"] move scratchpad
@@ -250,3 +250,5 @@ exec --no-startup-id wallpaper-reddit wallpaper
 #output "*" background ~/Pictures/Wallpapers/gnu-linux-os-simply-powerful_16-9_ve4_by\=madeinkobaia.png fill
 exec xinput set-prop 'AlpsPS/2 ALPS DualPoint TouchPad' 'libinput Tapping Enabled' 1
 exec --no-startup-id compton -b
+
+exec_always --no-startup-id numlockx on
