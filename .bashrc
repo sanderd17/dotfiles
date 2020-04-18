@@ -8,10 +8,12 @@ export TERMINAL="termite"
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+PS1='\e[1;36m[\u@\h \W]\e[m\$ '
 
 eval "$(dircolors ~/.dircolors)";
 
 export DESKTOP_SESSION="i3"
+
+export HISTCONTROL=ignoredups
 
 screenfetch -w

@@ -208,13 +208,13 @@ for_window [class="Arandr"] floating enable
 
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
-bindsym Shift+XF86MonBrightnessUp exec light -A 1 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
-bindsym Shift+XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
+bindsym Shift+XF86MonBrightnessUp sudo exec light -A 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
+bindsym Shift+XF86MonBrightnessDown exec sudo light -U 1 # decrease screen brightness
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increas sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
@@ -242,6 +242,7 @@ exec --no-startup-id $TERMINAL -name scratchpadterm
 # Application shortcuts
 
 bindsym $mod+b exec firefox
+bindsym $mod+shift+b exec chromium
 bindsym $mod+v exec code
 
 # Misc hacks
@@ -252,3 +253,4 @@ exec xinput set-prop 'AlpsPS/2 ALPS DualPoint TouchPad' 'libinput Tapping Enable
 exec --no-startup-id compton -b
 
 exec_always --no-startup-id numlockx on
+exec --no-startup-id dunst
